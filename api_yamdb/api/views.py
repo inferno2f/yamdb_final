@@ -3,13 +3,13 @@ from django.core.mail import send_mail
 from django.db.models import Avg
 from django.shortcuts import get_object_or_404
 from django_filters.rest_framework import DjangoFilterBackend
-from rest_framework import (filters, generics, permissions, status,
-                            viewsets, exceptions)
+from rest_framework import (exceptions, filters, generics, permissions, status,
+                            viewsets)
 from rest_framework.decorators import action
 from rest_framework.response import Response
 from rest_framework_simplejwt.tokens import SlidingToken
-
 from reviews.models import Category, Genre, Review, Title, User
+
 from .filters import TitleFilter
 from .mixins import ListCreateDestroyViewSet
 from .permissions import (AdminLevelOrReadOnlyPermission, AdminLevelPermission,
